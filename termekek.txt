@@ -1,0 +1,4 @@
+﻿Vezeték nélküli egér;6000;5
+Mechanikus billentyűzet;22000;2
+USB-C Kábel;3500;10
+Gaming Monitor;75000;4
