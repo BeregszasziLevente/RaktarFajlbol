@@ -16,3 +16,22 @@ foreach (var sor in beolvasott)
 
     termekek.Add(peldany);
 }
+
+Console.WriteLine("Raktáron lévő termékek:");
+
+int teljesErtek = 0;
+int osszDarab = 0;
+int osszEgysegar=0;
+foreach (var sor in termekek)
+{
+    Console.WriteLine($"\t- {sor.Nev}: {sor.Egysegar} Ft/db ({sor.RaktaronDb}) -> Érték: {sor.Egysegar * sor.RaktaronDb} Ft");
+    teljesErtek += sor.Egysegar * sor.RaktaronDb;
+    osszDarab+= sor.RaktaronDb;
+    osszEgysegar+= sor.Egysegar;
+}
+
+double atlag = (double)osszEgysegar / (double)termekek.LongCount();
+
+Console.WriteLine("----------------------------------------");
+Console.WriteLine($"Raktár teljes összértéke: {teljesErtek} Ft");
+Console.WriteLine($"Termékek átlagos egységára: {atlag:f0} Ft");
